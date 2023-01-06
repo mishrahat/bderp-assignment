@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react";
+import "./App.css";
+import Billing from "./component/Billing";
+import Shipping from "./component/Shipping";
+
+export const AppContext = createContext();
 
 function App() {
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedTown, setSelectedTown] = useState("");
+  const [selectedZipCode, setSelectedZipCode] = useState("");
+  const [selectedAddress, setSelectedAddress] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="home">
+      <AppContext.Provider
+        value={{
+          selectedCountry,
+          setSelectedCountry,
+          selectedState,
+          setSelectedState,
+          selectedDistrict,
+          setSelectedDistrict,
+          selectedCity,
+          setSelectedCity,
+          selectedTown,
+          setSelectedTown,
+          selectedZipCode,
+          setSelectedZipCode,
+          selectedAddress,
+          setSelectedAddress,
+        }}
+      >
+        <Billing />
+        <Shipping />
+      </AppContext.Provider>
     </div>
   );
 }

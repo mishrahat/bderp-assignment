@@ -1,10 +1,36 @@
-.App {
+.home {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.shipping-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.copy-address {
+  color: blue;
+  font-weight: 700;
+}
+
+.save-address {
+  margin-top: 1rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
